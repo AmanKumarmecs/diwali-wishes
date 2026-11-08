@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#100d26" />
+  <meta name="description" content="A Diwali wish for everyone from Aman Kumar. Open this interactive Diwali greeting and light the diyas!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Happy Diwali 🪔 | With wishes from Aman Kumar" />
+  <meta property="og:description" content="A festive wish for everyone from Aman Kumar. Tap to light five diyas and enjoy a special surprise!" />
+  <title>Happy Diwali ✨ Wishes from Aman Kumar</title>
+  <style>
+    :root{color-scheme:dark;--ink:#fff7df;--muted:#c8bcd7;--gold:#ffda80;--gold-hi:#fff3b1;--pink:#fd94b8;--dark:#100d26;--outline:rgba(255,218,128,.28)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse 90% 60% at 52% 45%,#402152 0%,#221533 52%,#0c0e26 100%)}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse 38% 24% at 0% 8%,rgba(239,100,136,.16),transparent),radial-gradient(ellipse 42% 30% at 100% 25%,rgba(181,97,255,.17),transparent),linear-gradient(140deg,transparent 28%,rgba(255,185,98,.035) 50%,transparent 72%);z-index:0}
+    .glow-orb{position:fixed;border-radius:100%;filter:blur(55px);pointer-events:none;opacity:.4;z-index:0}
+    .orb-a{width:180px;height:180px;background:#c54e83;top:31%;left:-95px}.orb-b{width:260px;height:260px;background:#a66aff;top:57%;right:-155px}
+    #stars,#fireworks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+    #stars{z-index:0;overflow:hidden}#fireworks{z-index:3}
+    .star{position:absolute;border-radius:50%;background:rgba(255,232,180,.8);animation:twinkle 3.6s ease-in-out infinite alternate}
+    @keyframes twinkle{from{opacity:.18;transform:scale(.6)}to{opacity:.9;transform:scale(1.2)}}
+    .page{position:relative;z-index:2;max-width:1200px;margin:auto;padding:22px 20px 36px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:4}
+    .brand{display:inline-flex;align-items:center;gap:10px;color:#f9dbab;letter-spacing:.13em;font-size:11px;text-transform:uppercase;font-weight:750}
+    .brand-mark{width:33px;height:33px;display:grid;place-items:center;border:1px solid rgba(255,221,148,.65);border-radius:50%;color:#ffe6a0;font-size:21px;box-shadow:0 0 22px #f4a24a30}
+    .language{border:1px solid #ffdfa652;background:rgba(28,20,47,.65);padding:9px 14px;color:#fce9cb;font-weight:700;border-radius:999px;cursor:pointer}
+    .language:hover,.language:focus-visible{background:#ffffff1b;outline:2px solid transparent}
+    main{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100svh - 107px);padding:28px 0 18px}
+    .pretitle{text-align:center;margin:6px 0 24px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#eabac4;font-weight:700;display:flex;align-items:center;justify-content:center;gap:17px}
+    .pretitle::before,.pretitle::after{content:"";display:block;width:36px;height:1px;background:linear-gradient(90deg,transparent,#ffce8a)}.pretitle::after{transform:rotate(180deg)}
+    .card{position:relative;isolation:isolate;width:min(100%,780px);border-radius:34px;border:1px solid rgba(255,223,164,.44);background:linear-gradient(155deg,rgba(76,40,70,.95),rgba(33,24,65,.96) 48%,rgba(25,25,53,.97));box-shadow:0 30px 100px #070615a6,0 0 0 7px #fff2c007,0 0 95px #fa85a521;overflow:hidden;text-align:center;padding:46px 54px 33px}
+    .card::before{content:"";position:absolute;inset:12px;border-radius:25px;border:1px solid rgba(251,217,149,.16);pointer-events:none}
+    .card::after{content:"";position:absolute;width:450px;height:220px;left:50%;top:-150px;transform:translateX(-50%);border-radius:50%;background:#ffbc7652;filter:blur(100px);pointer-events:none;z-index:-1}
+    .corner{position:absolute;color:#dca967;font-size:24px;opacity:.8;line-height:1}.corner.tl{top:21px;left:24px}.corner.tr{top:21px;right:24px}.corner.bl{bottom:19px;left:24px}.corner.br{bottom:19px;right:24px}
+    .little{color:#f0b4ca;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;margin:0 0 18px}
+    .to{font-family:Georgia,"Times New Roman",serif;font-size:clamp(16px,3vw,21px);font-style:italic;color:#f7d9be;margin:0 0 12px}
+    .title{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:.93;font-weight:500;text-shadow:0 4px 30px #f5a4474d}
+    .title .happy{display:block;font-size:clamp(47px,9vw,83px);letter-spacing:.13em;margin-left:.12em}
+    .title .diwali{display:block;font-size:clamp(80px,17vw,157px);letter-spacing:-.055em;margin-left:-.055em;padding:7px 0 9px}
+    .gold{background:linear-gradient(178deg,#fff8ca 2%,#ffd07e 34%,#f5a958 58%,#fff0b6 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hindi-line{font-family:Georgia,"Noto Serif Devanagari",serif;font-size:20px;color:#ffc7ac;margin:6px 0 19px;letter-spacing:.04em}
+    .ornament{display:flex;align-items:center;justify-content:center;gap:12px;color:#f5d89b;margin:6px 0 19px;font-size:17px}.ornament::before,.ornament::after{content:"";height:1px;width:60px;background:linear-gradient(90deg,transparent,#fac787)}.ornament::after{transform:rotate(180deg)}
+    .message{font-family:Georgia,"Times New Roman",serif;font-size:clamp(17px,2.8vw,21px);line-height:1.55;color:#f4dfd7;max-width:530px;margin:0 auto 22px}
+    .section-label{font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:780;color:#d9bcd2;margin-bottom:2px}
+    .diyas{display:flex;align-items:flex-end;justify-content:center;gap:clamp(4px,2vw,17px);margin:8px auto 12px}
+    .diya{position:relative;isolation:isolate;width:77px;height:90px;display:grid;place-items:end center;background:none;border:0;cursor:pointer;transition:transform .25s;touch-action:manipulation}
+    .diya:hover{transform:translateY(-4px)}.diya:active{transform:scale(.94)}.diya:focus-visible{outline:2px solid #ffdc9f;outline-offset:3px;border-radius:10px}
+    .diya svg{width:100%;height:85px;overflow:visible;filter:drop-shadow(0 8px 7px #10081995)}
+    .diya .flame{opacity:.15;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .4s}
+    .diya .halo{opacity:0;transition:opacity .4s}.diya.is-lit .halo{opacity:1}.diya.is-lit .flame{opacity:1;animation:flicker 1.5s ease-in-out infinite alternate}
+    .diya.is-lit{filter:drop-shadow(0 0 12px #ffaa435c)}
+    .diya:nth-child(2) .flame{animation-delay:.3s}.diya:nth-child(3) .flame{animation-delay:.8s}.diya:nth-child(4) .flame{animation-delay:.45s}.diya:nth-child(5) .flame{animation-delay:.7s}
+    @keyframes flicker{0%,100%{transform:rotate(-3deg) scale(.91)}45%{transform:rotate(4deg) scale(1.04)}70%{transform:rotate(-1deg) scale(.97)}}
+    .progress{font-size:12px;color:#edc7b0;min-height:18px;margin:0 0 10px}
+    .surprise{max-height:0;opacity:0;overflow:hidden;transition:max-height .8s ease,opacity .5s ease,margin .5s ease;margin:0 auto}
+    .surprise.revealed{max-height:250px;opacity:1;margin:13px auto 8px}
+    .surprise-inner{border-radius:17px;padding:14px 20px;background:linear-gradient(110deg,#c9808e20,#fbd18d18,#c9808e20);border:1px solid #ffd39d38}
+    .surprise-title{font-size:13px;letter-spacing:.15em;color:#ffe5a7;text-transform:uppercase;font-weight:800;margin:0 0 7px}
+    .surprise-text{font-family:Georgia,serif;font-size:19px;line-height:1.45;color:#fff1d9;margin:0}
+    .signature{font-family:Georgia,serif;font-size:17px;color:#ffd7a3;margin:17px 0 0;font-style:italic}
+    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+    button{font:inherit}
+    .btn{border-radius:999px;min-height:46px;padding:12px 22px;border:1px solid #f9cf87a8;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:800;transition:transform .15s,background .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    .btn-primary{color:#392033;background:linear-gradient(135deg,#fff0bd,#f7bc71);box-shadow:0 6px 22px #e9a64e42}.btn-primary:hover{box-shadow:0 8px 27px #f6ba6594}
+    .btn-outline{color:#ffe3c4;background:#ffffff0b}.btn-outline:hover{background:#ffffff1c}
+    .footnote{color:#b4a5c4;font-size:12px;text-align:center;margin:24px 0 0;line-height:1.6}
+    .footnote span{color:#e4b789}
+    .lantern{position:absolute;top:-2px;width:72px;height:150px;pointer-events:none;filter:drop-shadow(0 0 15px #ff965e62);animation:sway 5s ease-in-out infinite alternate;transform-origin:center top}
+    .lantern.left{left:10%;transform:scale(.84);animation-delay:-2s}.lantern.right{right:8%;animation-delay:-.7s}
+    .lantern .cord{position:absolute;left:50%;top:0;height:49px;width:1px;background:#d7a670}.lantern .lamp{position:absolute;top:45px;left:8px;width:56px;height:72px;background:linear-gradient(90deg,#a94d6e,#f19a6e 42%,#bf5370);clip-path:polygon(21% 0,79% 0,100% 30%,100% 70%,79% 100%,21% 100%,0 70%,0 30%);border-radius:6px;box-shadow:inset 0 0 20px #ffd483}
+    .lantern .lamp::after{content:"";position:absolute;inset:8px 17px;border-left:2px solid #ffdf9e92;border-right:2px solid #ffdf9e92;background:#ffc35f30}
+    .lantern .top{position:absolute;top:40px;left:20px;width:32px;height:9px;border-radius:4px;background:#eebf75}
+    .lantern .tassel{position:absolute;top:115px;left:34px;width:3px;height:27px;background:#efbe78}.lantern .tassel::after{content:"";position:absolute;left:-3px;bottom:0;width:9px;height:9px;transform:rotate(45deg);background:#eeac70}
+    @keyframes sway{from{rotate:-5deg}to{rotate:5deg}}
+    dialog{border:1px solid #ffd39675;border-radius:25px;width:min(92vw,470px);max-height:90vh;overflow:auto;padding:30px;color:#fff4e1;background:linear-gradient(150deg,#3d264f,#201a40);box-shadow:0 25px 100px #000b}
+    dialog::backdrop{background:#0b081ccc;backdrop-filter:blur(6px)}
+    .dialog-title{font:500 30px Georgia,serif;color:#ffe5af;margin:0 0 8px}.dialog-help{font-size:14px;line-height:1.5;color:#d9c6d4;margin:0 0 20px}
+    .dialog-bottom{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}.dialog-bottom .btn{flex:1}
+    .status{color:#ffdf9d;font-size:12px;line-height:1.5;min-height:15px;margin:12px 0 0}
+    .close{position:absolute;right:19px;top:18px;background:transparent;color:#ffead3;border:0;font-size:25px;cursor:pointer;line-height:1}
+    @media(max-width:760px){.lantern.left{left:0}.lantern.right{right:0}.lantern{opacity:.68;transform:scale(.7)}.card{padding:43px 18px 29px;border-radius:25px}.card::before{inset:8px;border-radius:18px}.page{padding:17px 13px 24px}.pretitle{margin-bottom:20px}.brand{font-size:9px;letter-spacing:.07em}.brand-mark{width:30px;height:30px}.little{font-size:10px}.diya{width:min(19%,69px);height:82px}.diya svg{height:79px}.ornament{margin-bottom:15px}.message{padding:0 7px}.actions{margin-top:22px}.btn{font-size:12px;padding:11px 17px}.footnote{margin-top:18px}.title .happy{font-size:clamp(42px,10.7vw,77px)}.title .diwali{font-size:clamp(72px,18vw,128px)}}
+    @media(max-width:360px){.card{padding-left:12px;padding-right:12px}.title .diwali{font-size:69px}.lantern{opacity:.35}.message{font-size:16px}.btn{padding:11px 13px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="glow-orb orb-a"></div><div class="glow-orb orb-b"></div>
+  <div id="stars" aria-hidden="true"></div><canvas id="fireworks" aria-hidden="true"></canvas>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✧</span><span data-i18n="brand">A LITTLE LIGHT FOR YOU</span></div>
+      <button class="language" id="langButton" type="button" aria-label="Switch language">हिंदी</button>
+    </header>
+    <div class="lantern left" aria-hidden="true"><i class="cord"></i><i class="lamp"></i><i class="top"></i><i class="tassel"></i></div>
+    <div class="lantern right" aria-hidden="true"><i class="cord"></i><i class="lamp"></i><i class="top"></i><i class="tassel"></i></div>
+    <main>
+      <p class="pretitle" data-i18n="pretitle">A FESTIVAL OF NEW BEGINNINGS</p>
+      <section class="card" aria-label="Interactive Diwali greeting">
+        <span class="corner tl" aria-hidden="true">✦</span><span class="corner tr" aria-hidden="true">✦</span><span class="corner bl" aria-hidden="true">✦</span><span class="corner br" aria-hidden="true">✦</span>
+        <p class="little" data-i18n="eyebrow">SENDING A LITTLE MAGIC YOUR WAY</p>
+        <p class="to" id="recipientLine">For everyone, with warm wishes ✨</p>
+        <h1 class="title"><span class="happy gold">HAPPY</span><span class="diwali gold">Diwali</span></h1>
+        <p class="hindi-line">शुभ दीपावली ✨</p>
+        <div class="ornament" aria-hidden="true">✧ ❀ ✧</div>
+        <p class="message" id="mainMessage">Diwali is a beautiful reminder that no matter how deep the darkness, a single light can illuminate the room. Wishing you strength, clarity, and everlasting joy this festival of lights.</p>
+        <p class="section-label" data-i18n="lightLabel">TAP EACH DIYA TO SPREAD THE LIGHT</p>
+        <div class="diyas" id="diyas" aria-label="Five interactive diyas">
+          <button class="diya" type="button" aria-label="Light diya 1" aria-pressed="false"></button>
+          <button class="diya" type="button" aria-label="Light diya 2" aria-pressed="false"></button>
+          <button class="diya" type="button" aria-label="Light diya 3" aria-pressed="false"></button>
+          <button class="diya" type="button" aria-label="Light diya 4" aria-pressed="false"></button>
+          <button class="diya" type="button" aria-label="Light diya 5" aria-pressed="false"></button>
+        </div>
+        <p class="progress" id="progress" aria-live="polite">0 of 5 diyas glowing ✨</p>
+        <div class="surprise" id="surprise" aria-live="polite">
+          <div class="surprise-inner">
+            <p class="surprise-title" data-i18n="surpriseTitle">✧ YOUR FESTIVAL WISH ✧</p>
+            <p class="surprise-text" id="surpriseText">May light always find its way to you — even on your darkest days. 💛</p>
+          </div>
+        </div>
+        <p class="signature" id="signature">With warm wishes, Aman Kumar 🪔</p>
+        <div class="actions">
+          <button class="btn btn-primary" id="lightAll" type="button"><span>✦</span><span data-i18n="lightAll">Light all diyas</span></button>
+          <button class="btn btn-outline" id="personalize" type="button"><span>♡</span><span data-i18n="share">Share this greeting</span></button>
+        </div>
+      </section>
+      <p class="footnote" data-i18n="footnote">A wish made with love <span>✦</span> Tap the diyas for a little surprise</p>
+    </main>
+  </div>
+  <dialog id="shareDialog" aria-labelledby="dialogTitle">
+    <button class="close" id="closeDialog" type="button" aria-label="Close">×</button>
+    <h2 class="dialog-title" id="dialogTitle" data-i18n="dialogTitle">Share the light ✨</h2>
+    <p class="dialog-help" data-i18n="dialogHelp">A Diwali wish from Aman Kumar to everyone. Share the same greeting link with all your friends, family and loved ones.</p>
+    <div class="dialog-bottom">
+      <button class="btn btn-primary" id="whatsAppBtn" type="button"><span>↗</span> WhatsApp</button>
+      <button class="btn btn-outline" id="copyBtn" type="button" data-i18n="copy">Copy link</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+  </dialog>
+  <script>
+  (() => {
+    'use strict';
+    const $ = (id) => document.getElementById(id);
+    const params = new URLSearchParams(window.location.search);
+    const state = { lang: params.get('lang') === 'hi' ? 'hi' : 'en' };
+    const fixedMessage = 'Diwali is a beautiful reminder that no matter how deep the darkness, a single light can illuminate the room. Wishing you strength, clarity, and everlasting joy this festival of lights.';
+    const strings = {
+      en: {
+        brand:'A LITTLE LIGHT FOR YOU',pretitle:'A FESTIVAL OF NEW BEGINNINGS',eyebrow:'SENDING A LITTLE MAGIC YOUR WAY',
+        lightLabel:'TAP EACH DIYA TO SPREAD THE LIGHT',surpriseTitle:'✧ YOUR FESTIVAL WISH ✧',lightAll:'Light all diyas',share:'Share this greeting',
+        footnote:'A wish made with love ✦ Tap the diyas for a little surprise',dialogTitle:'Share the light ✨',
+        dialogHelp:'A Diwali wish from Aman Kumar to everyone. Share the same greeting link with all your friends, family and loved ones.',
+        copy:'Copy link', defaultTo:'For everyone, with warm wishes ✨', signature:'With warm wishes, Aman Kumar 🪔',
+        surprise:'May light always find its way to you — even on your darkest days. 💛',
+        progress:(n)=>`${n} of 5 diyas glowing ✨`,complete:'Your world is a little brighter now! ✨',
+        lightOne:(n)=>`Light diya ${n}`,litOne:(n)=>`Diya ${n} is lit`,
+        hostFirst:'Publish the index.html file on GitHub Pages first to get a shareable website link.',
+        copied:'Link copied! Share it with everyone. ✨',
+        copyFailed:'Copy was unavailable. Please copy the website address from your browser.',
+        shareText:'🪔✨ Happy Diwali! A special wish from Aman Kumar. Tap the link, light the diyas and discover your surprise: '
+      },
+      hi: {
+        brand:'आपके लिए रोशनी का एक तोहफ़ा',pretitle:'नई शुरुआतों का उत्सव',eyebrow:'आपके नाम खुशियों की सौगात',
+        lightLabel:'हर दीये को छूकर रोशनी फैलाएँ',surpriseTitle:'✧ आपके लिए खास शुभकामना ✧',lightAll:'सभी दीये जलाएँ',share:'शुभकामना साझा करें',
+        footnote:'प्यार भरी शुभकामना ✦ दीये जलाकर सरप्राइज़ देखें',dialogTitle:'खुशियाँ बाँटें ✨',
+        dialogHelp:'अमन कुमार की ओर से सभी के लिए दीपावली की शुभकामनाएँ। एक ही लिंक परिवार और दोस्तों के साथ साझा करें।',
+        copy:'लिंक कॉपी करें', defaultTo:'सभी के लिए हार्दिक शुभकामनाएँ ✨',signature:'हार्दिक शुभकामनाओं सहित, Aman Kumar 🪔',
+        surprise:'जीवन के हर अँधेरे में उम्मीद की रोशनी आपका साथ निभाए। 💛',
+        progress:(n)=>`${n} / 5 दीये जगमगा रहे हैं ✨`,complete:'आपकी दुनिया अब और भी रोशन है! ✨',
+        lightOne:(n)=>`दीया ${n} जलाएँ`,litOne:(n)=>`दीया ${n} जल चुका है`,
+        hostFirst:'शेयर करने से पहले index.html को GitHub Pages पर प्रकाशित करें।',
+        copied:'लिंक कॉपी हो गया! ✨', copyFailed:'लिंक कॉपी नहीं हो पाया। ब्राउज़र से वेबसाइट का पता कॉपी करें।',
+        shareText:'🪔✨ दीपावली की हार्दिक शुभकामनाएँ! Aman Kumar की ओर से यह शुभकामना खोलें, दीये जलाएँ और सरप्राइज़ देखें: '
+      }
+    };
+    const buttons = [...document.querySelectorAll('.diya')];
+    const diyaSvg = `<svg viewBox="0 0 86 91" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="flameGlow"><stop stop-color="#ffe8a5" stop-opacity=".9"/><stop offset="1" stop-color="#ffb449" stop-opacity="0"/></radialGradient><linearGradient id="bowl" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ffca7a"/><stop offset=".4" stop-color="#df7b54"/><stop offset="1" stop-color="#943d53"/></linearGradient><linearGradient id="fire" x1="0" x2="0" y1="1" y2="0"><stop stop-color="#ffeeb3"/><stop offset=".42" stop-color="#ffbb45"/><stop offset="1" stop-color="#ff733e"/></linearGradient></defs><ellipse class="halo" cx="43" cy="35" rx="28" ry="35" fill="url(#flameGlow)"/><path class="flame" d="M43 11 C35 25 29 30 36 42 C40 48 48 47 51 40 C57 30 44 22 43 11Z" fill="url(#fire)"/><path d="M43 31 C40 36 40 40 43 42 C47 40 47 36 43 31Z" fill="#fff7d6" opacity=".8"/><path d="M13 52 Q43 72 73 52 Q69 77 45 82 Q23 82 13 52Z" fill="url(#bowl)" stroke="#ffda91" stroke-width="1.8"/><path d="M12 52 Q43 63 74 52" fill="none" stroke="#ffe0a5" stroke-width="3" stroke-linecap="round"/><path d="M30 69 Q43 77 56 69" fill="none" stroke="#ffdb9b" stroke-opacity=".6" stroke-width="1.4"/><circle cx="43" cy="68" r="3" fill="#ffdc91"/><path d="M9 84 Q43 91 77 84" fill="none" stroke="#ffcf7c" stroke-opacity=".2" stroke-width="2"/></svg>`;
+    buttons.forEach(b => b.innerHTML = diyaSvg);
+    // Each SVG contains gradients: make their IDs unique so all five render consistently.
+    buttons.forEach((b,i) => {
+      const svg=b.querySelector('svg');
+      ['flameGlow','bowl','fire'].forEach(id => {
+        const el=svg.querySelector('#'+id); if(el) el.id=id+i;
+        svg.querySelectorAll(`[fill="url(#${id})"]`).forEach(n=>n.setAttribute('fill',`url(#${id+i})`));
+      });
+    });
+    const lit = new Set();
+    function t(){return strings[state.lang]}
+    function render(){
+      document.documentElement.lang=state.lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => el.textContent=t()[el.dataset.i18n]);
+      $('langButton').textContent=state.lang==='en'?'हिंदी':'English';
+      $('recipientLine').textContent=t().defaultTo;
+      $('mainMessage').textContent=fixedMessage;
+      $('signature').textContent=t().signature;
+      $('surpriseText').textContent=t().surprise;
+      $('progress').textContent=lit.size===5?t().complete:t().progress(lit.size);
+      buttons.forEach((b,i)=>b.setAttribute('aria-label',lit.has(i)?t().litOne(i+1):t().lightOne(i+1)));
+    }
+    function burst(x,y,amount=32){
+      if(reduceMotion)return;
+      for(let i=0;i<amount;i++){
+        const theta=2*Math.PI*i/amount+(Math.random()-.5)*.3,speed=1.6+Math.random()*3.2;
+        particles.push({x,y,vx:Math.cos(theta)*speed,vy:Math.sin(theta)*speed,life:0,max:35+Math.random()*35,size:1+Math.random()*2.4,color:['#ffdb7c','#fa9ac2','#d1a4ff','#fff0bb','#fca25a'][i%5]});
+      }
+      if(particles.length>220)particles.splice(0,particles.length-220);
+    }
+    function light(b, i){
+      if(lit.has(i))return;
+      lit.add(i);b.classList.add('is-lit');b.setAttribute('aria-pressed','true');
+      const rect=b.getBoundingClientRect();burst(rect.left+rect.width/2,rect.top+28,18);
+      if(lit.size===5){
+        $('surprise').classList.add('revealed');
+        for(let k=0;k<4;k++)setTimeout(()=>burst(innerWidth*(.2+k*.2),innerHeight*(.18+Math.random()*.24),35),k*160);
+      }
+      render();
+    }
+    buttons.forEach((b,i)=>b.addEventListener('click',()=>light(b,i)));
+    $('lightAll').addEventListener('click',()=>buttons.forEach((b,i)=>light(b,i)));
+    $('langButton').addEventListener('click',()=>{state.lang=state.lang==='en'?'hi':'en';render()});
+    const dlg=$('shareDialog');
+    $('personalize').addEventListener('click',()=>{
+      $('status').textContent='';
+      dlg.showModal();
+    });
+    $('closeDialog').addEventListener('click',()=>dlg.close());
+    dlg.addEventListener('click',(e)=>{if(e.target===dlg)dlg.close()});
+    function makeUrl(){
+      const url=new URL(location.href);
+      url.hash='';url.search='';
+      if(state.lang==='hi')url.searchParams.set('lang','hi');
+      return url.toString();
+    }
+    function canShare(){
+      if(location.protocol==='file:'){$('status').textContent=t().hostFirst;return false}
+      return true;
+    }
+    $('copyBtn').addEventListener('click',async()=>{
+      if(!canShare())return;
+      const link=makeUrl();
+      try{
+        if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(link);
+        else{
+          const ta=document.createElement('textarea');ta.value=link;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+          if(!document.execCommand('copy'))throw Error('copy');ta.remove();
+        }
+        $('status').textContent=t().copied;
+      }catch(e){$('status').textContent=t().copyFailed}
+    });
+    $('whatsAppBtn').addEventListener('click',()=>{
+      if(!canShare())return;
+      const link=makeUrl();
+      window.open('https://wa.me/?text='+encodeURIComponent(t().shareText+link),'_blank','noopener,noreferrer');
+    });
+    // Subtle background stars and celebratory fireworks; no external libraries.
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduceMotion){
+      const stars=$('stars');
+      for(let i=0;i<75;i++){
+        const s=document.createElement('span');const size=Math.random()*2+1;s.className='star';
+        Object.assign(s.style,{left:(Math.random()*100)+'%',top:(Math.random()*100)+'%',width:size+'px',height:size+'px',animationDelay:-(Math.random()*5)+'s'});
+        stars.appendChild(s);
+      }
+    }
+    const canvas=$('fireworks'),ctx=canvas.getContext('2d');let particles=[];let width=innerWidth,height=innerHeight;
+    function resize(){width=innerWidth;height=innerHeight;let dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.floor(width*dpr);canvas.height=Math.floor(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
+    resize();window.addEventListener('resize',resize,{passive:true});
+    function animate(){
+      ctx.clearRect(0,0,width,height);
+      particles=particles.filter(p=>p.life<p.max);
+      for(const p of particles){
+        const a=1-p.life/p.max;ctx.globalAlpha=a*.88;ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.size*a,0,Math.PI*2);ctx.fill();
+        p.x+=p.vx;p.y+=p.vy;p.vx*=.987;p.vy=p.vy*.987+.038;p.life++;
+      }
+      ctx.globalAlpha=1;
+      if(!document.hidden)requestAnimationFrame(animate);
+    }
+    if(!reduceMotion){requestAnimationFrame(animate);document.addEventListener('visibilitychange',()=>{if(!document.hidden)requestAnimationFrame(animate)});}
+    render();
+  })();
+  </script>
+</body>
+</html>
